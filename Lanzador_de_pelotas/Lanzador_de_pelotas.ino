@@ -70,7 +70,7 @@ void loop(){
 
   //Movimiento del piston
   t = tnext;
-  if(t == 0){ //Se cierra
+  if(t == 0){ //Se retrae
     piston.write(minAngle);
     tnext += 1;
   }if(0 < t && t < tExtend){ //Espera cerrado
@@ -103,10 +103,6 @@ void loop(){
     Serial.println(pSpeed);
     prevTime = currentTime;
   }
-  // Serial.print("Tiempo: ");
-  // Serial.println(t);
-  // Serial.print("Ángulo: ");
-  // Serial.println(angle);
   delay(loopDelay);
 }
 
@@ -119,29 +115,3 @@ void forward(int speed){
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
-
-// void forwardB(int speed){
-//   analogWrite(ENB, speed);
-//   digitalWrite(IN3, LOW);
-//   digitalWrite(IN4, HIGH);
-// }
-
-// void backwardA(int speed){
-//   analogWrite(ENA, speed);
-//   digitalWrite(IN1, LOW);
-//   digitalWrite(IN2, HIGH);
-// }
-
-// void backwardB(int speed){
-//   analogWrite(ENB, speed);
-//   digitalWrite(IN3, LOW);
-//   digitalWrite(IN4, HIGH);
-// }
-
-// void stopA(){
-//   digitalWrite(ENA, LOW);
-// }
-
-// void stopB(){
-//   digitalWrite(ENB, LOW);
-// }
