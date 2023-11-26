@@ -20,8 +20,8 @@ Servo servoL;
 Servo servoR;
 
 int speed0 = 255;
-int tExtend = 300;
-int tRetract = 150;
+int tExtend = 150;
+int tRetract = 500;
 
 int t = 0;
 int tnext = 0;
@@ -31,9 +31,9 @@ int pSpeed;
 
 float angle = 0;
 int angleNext = 0;
-int tPistonMove = 100;
+int tPistonMove = 50;
 int minAngle = 0;
-int maxAngle = 80;
+int maxAngle = 180;
 
 int loopDelay = 10;
 
@@ -98,7 +98,7 @@ void loop(){
   unsigned long currentTime = millis();
   if(currentTime - prevTime > intervalPrint){
     Serial.print("Ángulo: ");
-    Serial.print(pAngulo);
+    Serial.print(90-pAngulo);
     Serial.print(" Velocidad: ");
     Serial.println(pSpeed);
     prevTime = currentTime;
